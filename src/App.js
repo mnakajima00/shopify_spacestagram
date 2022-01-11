@@ -18,11 +18,12 @@ const App = () => {
 
   const [imageData, setImageData] = useState();
 
-  useEffect(async() => {
-    const fetchData = await getImages(startDate.toLocaleDateString('en-CA'), endDate.toLocaleDateString('en-CA'));
-    setImageData(fetchData.data);
+  useEffect(() => {
+    getImages(startDate.toLocaleDateString('en-CA'), endDate.toLocaleDateString('en-CA'))
+    .then((res) => {
+      setImageData(res.data);
+    });
   },[]);
-
 
   const onSearchClick = (e) => {
     e.preventDefault();
