@@ -9,7 +9,7 @@ const axiosClient = axios.create({
 });
 
 export function getImages(start_date, end_date){
-    return axiosClient.get(`/apod?api_key=${process.env.API_KEY}&start_date=${start_date}&end_date=${end_date}&thumbs=true`);
+    return axiosClient.get(`/apod?api_key=${process.env.REACT_APP_API_KEY}&start_date=${start_date}&end_date=${end_date}&thumbs=true`);
 }
 
 export function getMoreImages(url){
