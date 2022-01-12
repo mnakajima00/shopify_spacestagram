@@ -1,5 +1,5 @@
 /* Chakra UI Components */
-import { Box, Heading, Center, Text, Button, Flex, Spacer } from '@chakra-ui/react';
+import { Box, Heading, Center, Text, Button, Flex, Spacer, VStack } from '@chakra-ui/react';
 
 /* react-datepicker */
 import DatePicker from "react-datepicker";
