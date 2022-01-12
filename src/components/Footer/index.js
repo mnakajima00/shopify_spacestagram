@@ -1,4 +1,4 @@
-import { Box, Center, Spinner, VStack, Text } from '@chakra-ui/react';
+import { Box, Center, Text } from '@chakra-ui/react';
 
 const Footer = () => {
     return (

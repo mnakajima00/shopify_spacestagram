@@ -1,16 +1,19 @@
-import { Box, Heading, Center, Text, HStack, VStack, Input, InputGroup, InputLeftElement, Icon, Button, Flex, Spacer } from '@chakra-ui/react';
+/* Chakra UI Components */
+import { Box, Heading, Center, Text, Button, Flex, Spacer } from '@chakra-ui/react';
 
+/* react-datepicker */
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
+/* React Icon */
 import { AiOutlineSearch } from 'react-icons/ai';
 
-const ImageSearch = ({ startDate, setStartDate, endDate, setEndDate, onSearchClick }) => {
+const ImageSearch = ({ startDate, setStartDate, endDate, setEndDate, onSearchClick, isLoading }) => {
 
     return (
-        <Box p={16}>
+        <Box m={16}>
             {/* Heading */}
-            <VStack>
+            <VStack mb={16}>
                 <Center>
                     <Heading as="h1" size="xl" color="#fff">Explore the universe.</Heading>
                 </Center>
@@ -18,7 +21,7 @@ const ImageSearch = ({ startDate, setStartDate, endDate, setEndDate, onSearchCli
                     <Heading as="h3" size="md" color="#fff">Start your journey here.</Heading>
                 </Center>
             </VStack>
-            {/* Searchbar */}
+            {/* Date picker */}
             <Box mt={10}>
                 <Flex w="70%" m="auto">
                     <Spacer />
@@ -56,7 +59,7 @@ const ImageSearch = ({ startDate, setStartDate, endDate, setEndDate, onSearchCli
             {/* Search Button */}
             <Box mt={8}>
                 <Center>
-                    <Button leftIcon={<AiOutlineSearch />} onClick={(e) => onSearchClick(e)}>Search</Button>
+                    <Button leftIcon={<AiOutlineSearch />} onClick={(e) => onSearchClick(e)} fontWeight="normal" isLoading={isLoading}>Search</Button>
                 </Center>
             </Box>
         </Box>
