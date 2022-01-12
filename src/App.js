@@ -3,6 +3,13 @@ import { useState, useEffect } from 'react';
 
 /* Chakra UI Components */
 import { Box, Center, Spinner, VStack, Text } from '@chakra-ui/react';
+import {
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
+} from '@chakra-ui/react';
+import { Link } from '@chakra-ui/react'
 
 /* Space background image */
 import BackgroundImage from './assets/images/space-bg.jpg';
@@ -17,6 +24,9 @@ import Footer from './components/Footer';
 import { getImages } from './services';
 
 const App = () => {
+
+  /* Alert for API error */
+  const [hasError, setHasError] = useState(false);
 
   /* End and Start dates */
   const [endDate, setEndDate] = useState(new Date());
@@ -36,6 +46,8 @@ const App = () => {
       setImageData(res.data);
     }).finally(() => {
       setIsLoading(false);
+    }).catch(() => {
+      setHasError(true);
     });
   },[]);
 
@@ -67,6 +79,13 @@ const App = () => {
         {/* Image Search */}
         <ImageSearch startDate={startDate} setStartDate={setStartDate} endDate={endDate} setEndDate={setEndDate} onSearchClick={onSearchClick} isLoading={isLoading}/>
       </Box>
+      {hasError && (
+        <Alert status='error' w={["80%", "60%"]} m="auto" mt={3}>
+          <AlertIcon />
+          <AlertTitle mr={2}>API Error!</AlertTitle>
+          <AlertDescription>Please click <Link href="https://youtu.be/3eBSqeKrHac" isExternal color="teal.500">here</Link> to see a Youtube demo of this application or head over to <Link href="https://github.com/mnakajima00/shopify_spacestagram" isExternal color="teal.500">Github</Link>.</AlertDescription>
+        </Alert>
+      )}
       {/* Gallery */}
       {!isLoading && imageData ? (
         <Box w="90%" m="auto" p={8}>
