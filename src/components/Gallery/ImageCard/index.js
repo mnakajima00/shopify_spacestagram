@@ -50,7 +50,7 @@ const ImageCard = ({ imageData }) => {
                     <ModalContent>
                         <ModalCloseButton color="#000" bgColor="#fff" zIndex={10} _focus={{ boxShadow: "none"}} _active={{ bg: '#fff', transform: 'none', borderColor: 'none' }}_hover={{ bg: '#fff' }}/>
                         <ModalBody p={0}>
-                            {imageData.media_type == "image" ? (
+                            {imageData.media_type === "image" ? (
                                 <Image src={imageData.url} objectFit="cover" m="auto" onClick={onOpen}/>
                             ):(
                                 <AspectRatio w="100%" ratio={16 / 9}>
@@ -63,7 +63,7 @@ const ImageCard = ({ imageData }) => {
                 </Modal>
 
                 {/* Display image */}
-                <Image src={imageData.media_type == "image" ? imageData.url : imageData.thumbnail_url} h="250px" m="auto" objectFit="cover" onClick={onOpen} cursor="pointer" />
+                <Image src={imageData.media_type === "image" ? imageData.url : imageData.thumbnail_url} h="250px" m="auto" objectFit="cover" onClick={onOpen} cursor="pointer" />
                 
                 {/* Display Title, Date and Explanation */}
                 <Stack p={4} position="relative" mb={10}>

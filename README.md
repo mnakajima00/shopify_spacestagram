@@ -9,3 +9,8 @@ Users are also able to also input a range of dates for which they'd like to see 
 This project was built using React JS, the Chakra-UI library, react-datepicker and the NASA API.
 
 [Link to live demo](https://shopify-spacestagram-alpha.vercel.app). Deployed using Vercel.
+
+If API issue still exists, you can watch a demo of it [here](https://youtu.be/3eBSqeKrHac)
+
+## Issues
+1. Jan 10, 2022 - NASA API returning 504 Gateway error.

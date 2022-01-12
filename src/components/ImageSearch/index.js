@@ -8,7 +8,7 @@ import "react-datepicker/dist/react-datepicker.css";
 /* React Icon */
 import { AiOutlineSearch } from 'react-icons/ai';
 
-const ImageSearch = ({ startDate, setStartDate, endDate, setEndDate, onSearchClick, isLoading }) => {
+const ImageSearch = ({ startDate, setStartDate, endDate, setEndDate, onSearchClick }) => {
 
     return (
         <Box m={16}>
@@ -59,7 +59,7 @@ const ImageSearch = ({ startDate, setStartDate, endDate, setEndDate, onSearchCli
             {/* Search Button */}
             <Box mt={8}>
                 <Center>
-                    <Button leftIcon={<AiOutlineSearch />} onClick={(e) => onSearchClick(e)} fontWeight="normal" isLoading={isLoading}>Search</Button>
+                    <Button leftIcon={<AiOutlineSearch />} onClick={(e) => onSearchClick(e)} fontWeight="normal">Search</Button>
                 </Center>
             </Box>
         </Box>
